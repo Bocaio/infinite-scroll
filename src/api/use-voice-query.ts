@@ -21,7 +21,7 @@ const fetchProjects = async ({ pageParam = 0 }): Promise<Response> => {
 
 
 const useQueryVoiceList = () => {
-    const query = useInfiniteQuery({queryKey : ["voiceLists"], queryFn : fetchProjects, initialPageParam : 1,getNextPageParam : ( ) =>  2})
+    const query = useInfiniteQuery({queryKey : ["voiceLists"], queryFn : fetchProjects, initialPageParam : 1,getNextPageParam : (lastPage,allPages ) =>  lastPage.items.length > 1 ? allPages.length + 1 : undefined})
     return query;
 }
 

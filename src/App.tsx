@@ -14,8 +14,6 @@ function App() {
       fetchNextPage();
     }
   },[inView,fetchNextPage])
-  console.log("inview is ", inView)
-  console.log("data is , ", data)
   return (
     <>
     <h1>HELLO This is Moe Yan</h1>
